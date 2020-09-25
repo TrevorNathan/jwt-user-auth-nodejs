@@ -1,3 +1,8 @@
+/**
+ * User object will have a roles array that contains
+ *  ids in roles collection as reference.
+ */
+
 const mongoose = require('mongoose');
 const { model } = require('./role.model');
 
