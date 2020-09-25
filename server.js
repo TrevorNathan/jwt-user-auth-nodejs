@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
 
 //#################################
 //open Mongoose connection to DB:
-const app = express();
 
 const db = require("./app/models");
 const Role = db.role;
