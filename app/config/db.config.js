@@ -2,5 +2,5 @@
 module.exports = {
     HOST: "localhost",
     PORT: 27017,
-    DB: "jwt_auth"
+    DB: "jwt_auth_app"
   };

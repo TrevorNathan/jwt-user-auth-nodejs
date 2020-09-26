@@ -1,3 +1,4 @@
+
 //Express is for building the Rest apis
 const express = require("express");
 
@@ -6,10 +7,6 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-
-//ROUTES:
-require('./app/routes/auth.routes')(app);
-require('./app/routes/user.routes')(app);
 
 var corsOptions = {
   origin: "http://localhost:8081"
@@ -23,19 +20,15 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to Node.js + MongoDB: User Authentication & Authorization with JWT application." });
-});
-
 //#################################
 //open Mongoose connection to DB:
 
+const dbConfig = require("./app/config/db.config")
 const db = require("./app/models");
 const Role = db.role;
 
 db.mongoose
-    .connect('mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}', {
+    .connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -49,9 +42,9 @@ db.mongoose
     });
 
 //Initial() function helps us to create 3 important rows in roles collection
-    function initial(){
-        Role.estimatedDocumentCount((err, count) => {
-          if (!err && count == 0){
+function initial() {
+  Role.estimatedDocumentCount((err, count) => {
+    if (!err && count === 0) {
 
 //create user role from Role model:
 //initiate new role object from Role model:
@@ -91,9 +84,3 @@ db.mongoose
     }
 
 //#################################
-
-// set port, listen for requests
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}.`);
-});
