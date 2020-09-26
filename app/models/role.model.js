@@ -7,14 +7,4 @@ const Role = mongoose.model(
   })
 );
 
-
-  module.exports = Role;
-
-  /*
- const Schema = mongoose.Schema
- const roleSchema = new Schema({
-     name: String
- }); 
- 
- module.exports = mongoose.model("Role", roleSchema)
- */
+module.exports = Role;

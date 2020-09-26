@@ -1,23 +1,3 @@
-
-/**
- * After initializing Mongoose, 
- * we don’t need to write CRUD functions because Mongoose 
- * supports all of them:
-
-=> create a new User: object.save()
-=> find a User by id: User.findById(id)
-=> find User by email: User.findOne({ email: … })
-=> find User by username: User.findOne({ username: … })
-=> find all Roles which name in given roles array: Role.find({ name: { $in: roles } })
- * 
- * 
- * To verify a Signup action, we need 2 functions:
-– check duplications for username and email
-– check if roles in the request is legal or not
- * 
- * 
- */
-
 const db = require("../models");
 const ROLES = db.ROLES;
 const User = db.user;

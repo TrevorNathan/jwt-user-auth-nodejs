@@ -1,16 +1,3 @@
-/**
- * There are 2 main functions for Authentication:
-(1). signup: create new User in database (role is user if not specifying role)
-(2). signin:
-
-=> find username of the request in database, if it exists
-=> compare password with password in database using bcrypt, if it is correct
-=> generate a token using jsonwebtoken
-=> return user information & access Token
- * 
- */
-
-
 const config = require("../config/auth.config");
 const db = require("../models");
 const User = db.user;

@@ -1,6 +1,5 @@
-
 module.exports = {
-    HOST: "localhost",
-    PORT: 27017,
-    DB: "jwt_auth_app"
-  };
+  HOST: "localhost",
+  PORT: 27017,
+  DB: "nodejs_jwt_auth"
+};
