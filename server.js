@@ -13,7 +13,7 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(morgan());
+app.use(morgan('dev'));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
