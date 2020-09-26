@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to my simple application application." });
+  res.json({ message: "Welcome to Node.js + MongoDB: User Authentication & Authorization with JWT application." });
 });
 
 //#################################
