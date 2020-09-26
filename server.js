@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const morgan = require("morgan");
 const dbConfig = require("./app/config/db.config");
 
 
@@ -11,6 +12,8 @@ var corsOptions = {
 };
 
 app.use(cors(corsOptions));
+
+app.use(morgan());
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -37,7 +40,7 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to bezkoder application." });
+  res.json({ message: "Welcome to Node.js + MongoDB: User Authentication & Authorization with JWT application." });
 });
 
 // routes
