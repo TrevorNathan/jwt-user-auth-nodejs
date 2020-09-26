@@ -19,7 +19,7 @@ node server.js
 #### Authorization APIs
 ```
 - GET /api/test/all
-- GET /api/test/user  [ loggedin users (user/moderator/admin) ]
+- GET /api/test/user  [ logged-in users (user/moderator/admin) ]
 - GET /api/test/mod   [ moderator ]
 - GET /api/test/admin [ admin ]
 
